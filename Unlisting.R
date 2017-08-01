@@ -37,4 +37,4 @@ test <- data.table(test)
 tes.w <- dcast(test, nameValue~nameVariable, value.var = "unlisted")
 
 # Cleansing of the dt
-tes.w <- tes.w[,-name]
+tes.w <- tes.w[,name:= NULL]
