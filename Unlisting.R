@@ -13,6 +13,10 @@ mylist <- list(list=list("kpi1"=2,"name"="trigger1","kpi2"=6.3, "send_date" ="20
 # Extraction of lists call "list"
 myTrigger <- mylist[grepl("list", names(mylist))]
 
+# Agregate list without creating a new list of list : append |Very usefull in a for loop
+
+myTrigger <- append(myTrigger, myTriggerTemp)
+
 
 # creation of unique list name necessary to unlist with 1, 2 or n elements of the list
 
