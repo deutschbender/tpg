@@ -18,7 +18,7 @@ keysecret <- emarsys_api$keysecret
 endpoint <- paste0(emarsys_api$version,"contact/checkids")
 
 ## data.frame to deduplicate
-doublon <- data.frame(email = c("admin@admin.fr", "admin.bis@admin.fr"), stringsAsFactors = F)
+doublon <- data.frame(email = c("email", "email"), stringsAsFactors = F)
 doublon$emailencoded <- URLencode(doublon$email, reserved = TRUE) 
 
 doublon.json <- toJSON(doublon, pretty=TRUE)
@@ -44,7 +44,7 @@ headers <- c('X-WSSE'=paste0('UsernameToken Username="',keyname,'", ',
                                'Nonce="',nonce,'", ',
                                'Created="',timestamp,'"'))
 
-r <- GET(paste0('https://suite17.emarsys.net/api/v2/contact/?3=','admin%40admin.fr') 
+r <- GET(paste0('https://suite17.emarsys.net/api/v2/contact/?3=','encodedemail) 
          add_headers('',.headers = headers))
 reply <- fromJSON(rawToChar(r$content))
 contactId <- replay$data$id
