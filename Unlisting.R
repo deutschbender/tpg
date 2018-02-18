@@ -1,7 +1,7 @@
 ##-------------
 #### How to unlist lists with ability to choose elements of the data structure
 ##-------------
-
+setwd()
 # Library and list creation
 library(data.table)
 
@@ -38,3 +38,7 @@ tes.w <- dcast(test, nameValue~nameVariable, value.var = "unlisted")
 
 # Cleansing of the dt
 tes.w <- tes.w[,name:= NULL]
+
+Sys.getenv("VAR1")
+file.edit("~/.Renviron")
+Sys.getenv("id")
