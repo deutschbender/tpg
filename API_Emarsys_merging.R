@@ -44,7 +44,7 @@ headers <- c('X-WSSE'=paste0('UsernameToken Username="',keyname,'", ',
                                'Nonce="',nonce,'", ',
                                'Created="',timestamp,'"'))
 
-r <- GET(paste0('https://suite17.emarsys.net/api/v2/contact/?3=','encodedemail) 
+r <- GET(paste0('https://suite17.emarsys.net/api/v2/contact/?3=',encodedemail) 
          add_headers('',.headers = headers))
 reply <- fromJSON(rawToChar(r$content))
 contactId <- replay$data$id
