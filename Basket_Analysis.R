@@ -1,3 +1,6 @@
+# source : https://www.analyticsvidhya.com/blog/2017/08/mining-frequent-items-using-apriori-algorithm/
+#ref : http://r-statistics.co/Association-Mining-With-R.html
+
 library(arules)
 library(arulesViz)
 library(RColorBrewer)
